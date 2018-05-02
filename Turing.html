@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Máquinas de Turing</title>
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="scripts/bootstrap.js"></script>
+        <script type="text/javascript" src="scripts/turing.js"></script>
+        <script type="text/javascript" src="scripts/ui.js"></script>
+        <script type="text/javascript" src="scripts/modal.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/modal.css">
+        <link rel="stylesheet" type="text/css" href="css/fontawesome.css">        
+    </head>
+    <body>
+      <!--
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Máquinas de Turing</h1>
+                <p class="lead">Simulador de máquinas de Turing</p>
+                <hr class="my-4">
+              </div>
+        </div>
+        -->
+        <div class="sticky-top bg-white">
+          <h1 class="display-2 text-center text-dark"><small>Máquinas de Turing</small></h1><hr class="my-4">
+          <div class="d-flex justify-content-center my-5 ">
+              <div class="row">
+                  <div class="col">
+                      <ul class="nav nav-tabs small" role="tablist">
+                          <li class="nav-item"><a id="info" class="nav-link text-uppercase text-secondary" data-toggle="tab" href="#tab0" role="tab">Uso</a></li>
+                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase active text-info" data-toggle="tab" href="#tab1" role="tab">Palíndromo</a></li>
+                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab2" role="tab">Duplicador</a></li>
+                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab3" role="tab">Multiplicador</a></li>
+                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab4" role="tab">Sumador</a></li>
+                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab5" role="tab">Restador</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+            <center>
+              <div class="d-block" id="menu">
+                  <div class="col-6 my-3">
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Cadena" id="cadena1">
+                        <span class="input-group-btn">
+                          <button class="btn btn-info" type="button" id="cargar" content="1" data-toggle="popover1" title="Error de entrada"  data-content="La cadena está vacía." data-placemente="right" data-trigger="focus">Cargar</button>
+                        </span>                                  
+                      </div>
+                  </div>  
+                  <div class="col-3 my-4">
+                      <p class="lead">Contador: <span id="contador1">0</span> | Estado: <span id="estado1">0</span></p>
+                      
+                      <div class="slidecontainer">
+                        Velocidad:<br>
+                        <input type="range" min="0" max="1000" value="500"  step="100"class="slider" id="rango1"><p></p>
+                      </div>                    
+                      <button class="btn btn-block btn-danger" id="evaluar" content="1">Evaluar</button>
+                  </div>
+              </div>
+            </center>
+      </div>
+
+
+
+        <div class="tab-content">
+
+            
+            <div class="tab-pane" id="tab0" role="tabpanel">
+                <div class="d-flex justify-content-center">
+                    <div class="col-8">
+                      <p class="lead">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quaerat quia nihil, dolorum molestias eum cumque perferendis itaque inventore dolor nam vero placeat voluptas quis sapiente consequuntur culpa modi delectus.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
+                        Lorem ipsum, ddolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
+                        Lorem ipsum dolor,dolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
+                        Lorem ipsum dolor,dolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
+                        Lorem ipsum dolor,dolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
+                        Lorem ipsum dolor,olor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore laudantium maxime, perspiciatis architecto repudiandae dolorem quae itaque? Officia at non in, odio consectetur eveniet eum consequatur hic? Impedit, sunt dolorum.
+                      </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane active" id="tab1" role="tabpanel">
+                <center>
+                    <div class="d-inline ">
+                              <div class="col-3">
+                                  <hr class="my-4">
+                                  <table id="tabla1" class="table table-hover text-center">
+                                      <thead class="thead-dark">
+                                        <tr>
+                                          <th scope="col">Cadena</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                    </table>
+                              </div>
+                    </div>
+                  </center>
+            </div>
+
+            <div class="tab-pane" id="tab2" role="tabpanel">
+                <center>
+                    <div class="d-inline ">
+                        <div class="col-3">
+                            <hr class="my-4">
+                                  <table id="tabla2" class="table table-hover text-center">
+                                      <thead class="thead-dark">
+                                        <tr>
+                                          <th scope="col">Cadena</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                    </table>
+                              </div>
+                    </div>
+                  </center>
+            </div>
+
+            <div class="tab-pane" id="tab3" role="tabpanel">
+                <center>
+                    <div class="d-inline ">
+                        <div class="col-3">
+                            <hr class="my-4">
+                                  <table id="tabla3" class="table table-hover text-center">
+                                      <thead class="thead-dark">
+                                        <tr>
+                                          <th scope="col">Cadena</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                    </table>
+                              </div>
+                    </div>
+                  </center>
+            </div>
+
+            <div class="tab-pane" id="tab4" role="tabpanel">
+                <center>
+                    <div class="d-inline ">
+                        <div class="col-3">
+                            <hr class="my-4">
+                                  <table id="tabla4" class="table table-hover text-center">
+                                      <thead class="thead-dark">
+                                        <tr>
+                                          <th scope="col">Cadena</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                    </table>
+                              </div>
+                    </div>
+                  </center>
+            </div>
+
+            <div class="tab-pane" id="tab5" role="tabpanel">
+                <center>
+                    <div class="d-inline ">
+                        <div class="col-3">
+                            <hr class="my-4">
+                                  <table id="tabla5" class="table table-hover text-center">
+                                      <thead class="thead-dark">
+                                        <tr>
+                                          <th scope="col">Cadena</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                      </tbody>
+                                    </table>
+                              </div>
+                    </div>
+                  </center>
+            </div>
+
+      </div>
+
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalText" class="lead"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      
+    </body>
+</html>
