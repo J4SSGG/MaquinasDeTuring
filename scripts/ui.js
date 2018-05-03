@@ -4,6 +4,7 @@
 
 const BLANK = 'ß';
 var Tick = undefined;
+ID = 1;
 var Machines = {
     1 : new Array(),
     2 : new Array(),
@@ -18,7 +19,26 @@ var Machines = {
 /****************/
 
 $(function() {
-    Clear();    
+    Clear();
+
+    $('#elemento1').click(function(){
+        ID = 1;
+    });
+    $('#elemento2').click(function(){
+        ID = 2;
+    });
+    $('#elemento3').click(function(){
+        ID = 3;
+    });
+    $('#elemento4').click(function(){
+        ID = 4;
+    });
+    $('#elemento5').click(function(){
+        ID = 5;
+    });
+    $('#info').click(function(){
+        $('#instrucciones' + ID).modal('show');
+    });
 });
 
 function ScrollToID(id, time, table){
@@ -62,6 +82,8 @@ function Clear(){
     // Popups
     $('[data-toggle="popover1"]').popover();
     $('#myModal').modal('hide');
+    $('#instrucciones').modal('hide');
+
     // SET MATCHINES
     SetMachine1();
     SetMachine2();
@@ -70,32 +92,16 @@ function Clear(){
     SetMachine5();
 
     // SET COUNT
-    $('#contador1').text(Machines[1].Count);
-    $('#contador2').text(Machines[2].Count);
-    $('#contador3').text(Machines[3].Count);
-    $('#contador4').text(Machines[4].Count);
-    $('#contador5').text(Machines[5].Count);
+    $('#contador').text(Machines[ID].Count);
 
     // SET STATE TO MACHINE'S HEAD
-    $('#estado1').text(Machines[1].Count);
-    $('#estado2').text(Machines[2].Count);
-    $('#estado3').text(Machines[3].Count);
-    $('#estado4').text(Machines[4].Count);
-    $('#estado5').text(Machines[5].Count);
+    $('#estado').text(Machines[ID].Count);
 }
 
 function Update(){
        // SET COUNT
-       $('#contador1').text(Machines[1].Count);
-       $('#contador2').text(Machines[2].Count);
-       $('#contador3').text(Machines[3].Count);
-       $('#contador4').text(Machines[4].Count);
-       $('#contador5').text(Machines[5].Count);
+       $('#contador').text(Machines[ID].Count);
    
        // SET STATE TO MACHINE'S HEAD
-       $('#estado1').text(Machines[1].State);
-       $('#estado2').text(Machines[2].State);
-       $('#estado3').text(Machines[3].State);
-       $('#estado4').text(Machines[4].State);
-       $('#estado5').text(Machines[5].State);
+       $('#estado').text(Machines[ID].State);
 }

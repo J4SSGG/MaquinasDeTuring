@@ -22,39 +22,39 @@
         </div>
         -->
         <div class="sticky-top bg-white">
-          <h1 class="display-2 text-center text-dark"><small>Máquinas de Turing</small></h1><hr class="my-4">
-          <div class="d-flex justify-content-center my-5 ">
+          <div class="d-flex justify-content-center mt-1 mb-5 ">
               <div class="row">
                   <div class="col">
                       <ul class="nav nav-tabs small" role="tablist">
-                          <li class="nav-item"><a id="info" class="nav-link text-uppercase text-secondary" data-toggle="tab" href="#tab0" role="tab">Uso</a></li>
-                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase active text-info" data-toggle="tab" href="#tab1" role="tab">Palíndromo</a></li>
-                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab2" role="tab">Duplicador</a></li>
-                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab3" role="tab">Multiplicador</a></li>
-                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab4" role="tab">Sumador</a></li>
-                          <li class="nav-item"><a id="element" content="1" class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab5" role="tab">Restador</a></li>
+                          <li id="elemento1" class="nav-item"><a class="nav-link text-uppercase active text-info" data-toggle="tab" href="#tab1" role="tab">Sumador</a></li>
+                          <li id="elemento2" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab2" role="tab">Restador</a></li>
+                          <li id="elemento3" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab3" role="tab">Duplicador</a></li>
+                          <li id="elemento4" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab4" role="tab">Multiplicador</a></li>
+                          <li id="elemento5" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab5" role="tab">Palíndromos</a></li>
                       </ul>
                   </div>
               </div>
           </div>
             <center>
-              <div class="d-block" id="menu">
+              <div class="d-block">
                   <div class="col-6 my-3">
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Cadena" id="cadena1">
+                        <input type="text" class="form-control" placeholder="Cadena" id="cadena">
                         <span class="input-group-btn">
-                          <button class="btn btn-info" type="button" id="cargar" content="1" data-toggle="popover1" title="Error de entrada"  data-content="La cadena está vacía." data-placemente="right" data-trigger="focus">Cargar</button>
+                          <button class="btn btn-info" type="button" id="cargar" data-toggle="popover1" title="Error de entrada"  data-content="La cadena está vacía." data-placemente="right" data-trigger="focus">Cargar</button>
+                          <button class="btn btn-secondary" id="info"><strong>?</strong></button>
                         </span>                                  
                       </div>
                   </div>  
                   <div class="col-3 my-4">
-                      <p class="lead">Contador: <span id="contador1">0</span> | Estado: <span id="estado1">0</span></p>
+                      <p class="lead">Contador: <span id="contador">0</span> | Estado: <span id="estado">0</span></p>
                       
                       <div class="slidecontainer">
                         Velocidad:<br>
-                        <input type="range" min="0" max="1000" value="500"  step="100"class="slider" id="rango1"><p></p>
+                        <input type="range" min="0" max="1000" value="500"  step="100"class="slider" id="rango"><p></p>
                       </div>                    
                       <button class="btn btn-block btn-danger" id="evaluar" content="1">Evaluar</button>
+                      <button class="btn btn-block btn-warning" id="evaluar" content="1" onclick="Stop();">Detener</button>
                   </div>
               </div>
             </center>
@@ -63,33 +63,6 @@
 
 
         <div class="tab-content">
-
-            
-            <div class="tab-pane" id="tab0" role="tabpanel">
-                <div class="d-flex justify-content-center">
-                    <div class="col-8">
-                      <p class="lead">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quaerat quia nihil, dolorum molestias eum cumque perferendis itaque inventore dolor nam vero placeat voluptas quis sapiente consequuntur culpa modi delectus.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
-                        Lorem ipsum, ddolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
-                        Lorem ipsum dolor,dolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
-                        Lorem ipsum dolor,dolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
-                        Lorem ipsum dolor,dolor sit, amet consectetur adipisicing elit. Quis ratione quisquam ex minus accusamus alias sed. Perspiciatis cumque animi alias, non, nesciunt sunt minima adipisci dignissimos facere autem quaerat ipsum.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
-                        Lorem ipsum dolor,olor sit amet consectetur adipisicing elit. Perferendis recusandae tempora labore nesciunt, excepturi quisquam possimus rerum debitis id explicabo harum? Velit, delectus! Doloribus, iste! Exercitationem culpa quas aliquam expedita?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi at ipsum repudiandae commodi fugit praesentium amet exercitationem dolore asperiores magnam labore consectetur officiis ut voluptas, consequatur aliquid aut accusantium.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore laudantium maxime, perspiciatis architecto repudiandae dolorem quae itaque? Officia at non in, odio consectetur eveniet eum consequatur hic? Impedit, sunt dolorum.
-                      </p>
-                    </div>
-                </div>
-            </div>
 
             <div class="tab-pane active" id="tab1" role="tabpanel">
                 <center>
@@ -188,25 +161,95 @@
 
       </div>
 
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p id="modalText" class="lead"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalText" class="lead"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <div class="modal fade" id="instrucciones1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle"><h2>Sumador</h2></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Detalles:</h5>
+                        <p class="text-center">
+                            Sumador de base unaria. Esta máquina determina el resultado de una suma entre N números en base unaria.
+                        </p>
+
+                        <h5>Uso:</h5>
+                        <p class="text-center">
+                            <i>Término</i>+<i>Término</i>=
+                        </p>
+                        <h5>Ejemplos:</h5>
+                        <p class="text-center">
+                            111+11=<br>
+                            1+1+1+1+1=<br>
+                            1+=<br>
+                            +1=
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
       
+
+        <div class="modal fade" id="instrucciones2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle"><h2>Restador</h2></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Detalles:</h5>
+                            <p class="text-center">
+                                Restador de base unaria. Esta máquina determina el resultado de la resta entre <stron>DOS</stron> números en base unaria.
+                            </p>
+    
+                            <h5>Uso:</h5>
+                            <p class="text-center">
+                                <i>'Término a'</i>-<i>'Término b'</i>=<br>
+                                a >= b ;
+                                a > 0 ;
+                                b >= 0
+                            </p>
+                            <h5>Ejemplos:</h5>
+                            <p class="text-center">
+                                111-11=<br>
+                                1-1=<br>
+                                111111-=<br>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     </body>
 </html>
