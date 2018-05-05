@@ -22,6 +22,9 @@
         </div>
         -->
         <div class="sticky-top bg-white">
+            <h1 class="text-center">
+                <strong id="etiqueta">Sumador</strong>
+            </h1>
           <div class="d-flex justify-content-center mt-1 mb-5 ">
               <div class="row">
                   <div class="col">
@@ -29,8 +32,8 @@
                           <li id="elemento1" class="nav-item"><a class="nav-link text-uppercase active text-info" data-toggle="tab" href="#tab1" role="tab">Sumador</a></li>
                           <li id="elemento2" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab2" role="tab">Restador</a></li>
                           <li id="elemento3" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab3" role="tab">Duplicador</a></li>
-                          <li id="elemento4" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab4" role="tab">Multiplicador</a></li>
-                          <li id="elemento5" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab5" role="tab">Palíndromos</a></li>
+                          <li id="elemento4" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab4" role="tab">Palíndromos</a></li>
+                          <li id="elemento5" class="nav-item"><a  class="nav-link text-uppercase text-info" data-toggle="tab" href="#tab5" role="tab">Multiplicador</a></li>
                       </ul>
                   </div>
               </div>
@@ -52,9 +55,12 @@
                       <div class="slidecontainer">
                         Velocidad:<br>
                         <input type="range" min="0" max="1000" value="500"  step="100"class="slider" id="rango"><p></p>
-                      </div>                    
-                      <button class="btn btn-block btn-danger" id="evaluar" content="1">Evaluar</button>
-                      <button class="btn btn-block btn-warning" id="evaluar" content="1" onclick="Stop();">Detener</button>
+                      </div>
+                      <div class="btn-group" role="group" aria-label="Funciones">
+                            <button class="btn btn-danger" id="evaluar" content="1">Evaluar</button>
+                            <button class="btn btn-warning" id="evaluar" content="1" onclick="Stop();">Detener</button>
+                      </div>                      
+                      
                   </div>
               </div>
             </center>
@@ -67,14 +73,8 @@
             <div class="tab-pane active" id="tab1" role="tabpanel">
                 <center>
                     <div class="d-inline ">
-                              <div class="col-3">
-                                  <hr class="my-4">
-                                  <table id="tabla1" class="table table-hover text-center">
-                                      <thead class="thead-dark">
-                                        <tr>
-                                          <th scope="col">Cadena</th>
-                                        </tr>
-                                      </thead>
+                              <div class="col-10">
+                                  <table id="tabla1" class="table table-hover text-center table-responsive">
                                       <tbody>
                                       </tbody>
                                     </table>
@@ -86,17 +86,11 @@
             <div class="tab-pane" id="tab2" role="tabpanel">
                 <center>
                     <div class="d-inline ">
-                        <div class="col-3">
-                            <hr class="my-4">
-                                  <table id="tabla2" class="table table-hover text-center">
-                                      <thead class="thead-dark">
-                                        <tr>
-                                          <th scope="col">Cadena</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                      </tbody>
-                                    </table>
+                        <div class="col-10">
+                                <table id="tabla2" class="table table-hover text-center table-responsive">
+                                    <tbody>
+                                    </tbody>
+                                  </table>
                               </div>
                     </div>
                   </center>
@@ -105,57 +99,39 @@
             <div class="tab-pane" id="tab3" role="tabpanel">
                 <center>
                     <div class="d-inline ">
-                        <div class="col-3">
-                            <hr class="my-4">
-                                  <table id="tabla3" class="table table-hover text-center">
-                                      <thead class="thead-dark">
-                                        <tr>
-                                          <th scope="col">Cadena</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                      </tbody>
-                                    </table>
-                              </div>
+                        <div class="col-10">
+                            <table id="tabla3" class="table table-hover text-center table-responsive">
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>    
                     </div>
                   </center>
             </div>
 
             <div class="tab-pane" id="tab4" role="tabpanel">
                 <center>
-                    <div class="d-inline ">
-                        <div class="col-3">
-                            <hr class="my-4">
-                                  <table id="tabla4" class="table table-hover text-center">
-                                      <thead class="thead-dark">
-                                        <tr>
-                                          <th scope="col">Cadena</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                      </tbody>
+                        <div class="d-inline ">
+                                <div class="col-10">
+                                    <table id="tabla4" class="table table-hover text-center table-responsive">
+                                        <tbody>
+                                        </tbody>
                                     </table>
-                              </div>
-                    </div>
+                                </div>    
+                            </div>
                   </center>
             </div>
 
             <div class="tab-pane" id="tab5" role="tabpanel">
                 <center>
-                    <div class="d-inline ">
-                        <div class="col-3">
-                            <hr class="my-4">
-                                  <table id="tabla5" class="table table-hover text-center">
-                                      <thead class="thead-dark">
-                                        <tr>
-                                          <th scope="col">Cadena</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                      </tbody>
+                        <div class="d-inline ">
+                                <div class="col-10">
+                                    <table id="tabla5" class="table table-hover text-center table-responsive">
+                                        <tbody>
+                                        </tbody>
                                     </table>
-                              </div>
-                    </div>
+                                </div>    
+                            </div>
                   </center>
             </div>
 
@@ -233,15 +209,14 @@
                             <h5>Uso:</h5>
                             <p class="text-center">
                                 <i>'Término a'</i>-<i>'Término b'</i>=<br>
-                                a >= b ;
-                                a > 0 ;
-                                b >= 0
                             </p>
                             <h5>Ejemplos:</h5>
                             <p class="text-center">
                                 111-11=<br>
                                 1-1=<br>
                                 111111-=<br>
+                                1-11=<br>
+                                -1=<br>
                             </p>
                         </div>
                         <div class="modal-footer">

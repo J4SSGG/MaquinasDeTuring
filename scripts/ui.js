@@ -23,18 +23,28 @@ $(function() {
 
     $('#elemento1').click(function(){
         ID = 1;
+        ClearRows(1);
+        $('#etiqueta').innerHTML = "Sumador";
     });
     $('#elemento2').click(function(){
         ID = 2;
+        ClearRows(2);
+        $("#etiqueta").innerHTML = "Restador";
     });
     $('#elemento3').click(function(){
-        ID = 3;
+        ID = 3;        
+        ClearRows(3);
+        $("#etiqueta").innerText = "Duplicador";
     });
     $('#elemento4').click(function(){
         ID = 4;
+        ClearRows(4);
+        $("#etiqueta").innerText = "Palíndromo";
     });
     $('#elemento5').click(function(){
         ID = 5;
+        ClearRows(5);
+        $("#etiqueta").innerText = "Multiplicador";
     });
     $('#info').click(function(){
         $('#instrucciones' + ID).modal('show');
@@ -48,19 +58,26 @@ function ScrollToID(id, time, table){
     $('body').animate({ scrollTop: item.offset().top - container.offset().top + container.scrollTop() }, time >= 0 ? time:600, 'swing');
 }
 
+function ScrollLeftToID(id, time, table){
+
+    container = $('#tabla' + table);
+    item = $('#' + id);
+    $('#tabla' + table).animate({ scrollLeft: item.offset().left - 5 * container.offset().left + container.scrollLeft() }, time >= 0 ? time:600, 'swing');
+}
+
 function AddRow(value, id_value, class_value, table){
 
     container = $('#tabla' + table + " tbody")
-    item = `<tr id='${id_value}' class='${class_value}'>
-                <td>${value}</td>
-            </tr>`
+    item = `<td id='${id_value}' class='${class_value}'>
+                ${value}
+            </td>`
     container.append(item);
     return true
 }
 
 function ClearRows(table){
 
-    $('#tabla' + table + " tbody tr").remove();
+    $('#tabla' + table + " tbody td").remove();
     return true
 }
 
@@ -74,7 +91,7 @@ function ChangeActiveRow(table, time) { // This method requieres that 'the calle
     /* Set new active row*/
     newRow = $('#new-row');
     newRow.attr('id', 'active-row');    
-    ScrollToID('active-row', time, table);
+    ScrollLeftToID('active-row', time, table);
     newRow.attr('class', 'bg-info text-light');
 }
 
