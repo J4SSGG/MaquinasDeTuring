@@ -400,10 +400,44 @@ function SetMachine4(){
 }
 
 function SetMachine5(){
+
+    Machines[5][0] = {
+        '1' : ['X', 1, 1],
+        '*' : ['*', 6, 1]
+    }
+
+    Machines[5][1] = {
+        '1' : ['1', 1, 1],
+        '*' : ['*', 2, 1]
+    }
+
+    Machines[5][2] = {
+        '1' : ['X', 3, 1],
+        '=' : ['=', 5, -1]
+    }
+
+    Machines[5][3] = {
+        '1' : ['1', 3, 1],
+        '=' : ['=', 3, 1],
+        'ß' : ['1', 4, -1]
+    }
+
+    Machines[5][4] = {
+        '1' : ['1', 4, -1],
+        '=' : ['=', 4, -1],
+        'X' : ['1', 2, 1]
+    }
+
+    Machines[5][5] = {
+        '1' : ['1', 5, -1],
+        '*' : ['*', 5, -1],
+        'X' : ['1', 0, 1]
+    }
+
     Machines[5]['i'] = 0;
     Machines[5]['Count'] = 0;
     Machines[5]['State'] = 0;
     Machines[5]['Functions'] = {
-        Acceptable(state) { return state == 3 }
+        Acceptable(state) { return state == 6 }
     };
 }
