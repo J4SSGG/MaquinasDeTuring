@@ -50,7 +50,7 @@ function EvaluateStep(symbol, id){
     Machines[id].Count++;
     symbols = Machines[id][Machines[id].State]
 
-    if(symbols[symbol] == undefined) return { Error : true, Acceptable : Machines[id].Functions.Acceptable(Machines[id].State), Message : `El símbolo <strong>'${symbol}'</strong> no tiene transición definida en el estado <strong>${Machines[id].State}</strong> de esta máquina.`};
+    if(symbols[symbol] == undefined) return { Error : true, Acceptable : Machines[id].Functions.Acceptable(Machines[id].State), Message : `El símbolo <strong>'${symbol}'</strong> no tiene transición definida en el estado <strong>${Machines[id].State}</strong> de esta máquina. ${symbols.ERROR ? symbols.ERROR : ''}`};
 
     NextValues = symbols[symbol];
     Machines[id].State = NextValues[1];
@@ -115,12 +115,12 @@ function SetMachine1(){
         '1' : ['X', 1, 1],
         '+' : ['+', 0, 1],
         '=' : ['=', 3, 1],
-        'ß' : ['ß', 0, 1]
+        "ERROR" : "La máquina dice: cadena vacía o formato incorrecto."
     };
 
     Machines[1][1] = {
         '1' : ['1', 1, 1],
-        '+' : ['+', 1, 1],
+        '+' : ['+', 4, 1],
         '=' : ['=', 1, 1],
         'ß' : ['1', 2, -1]
     };
@@ -136,6 +136,12 @@ function SetMachine1(){
         '1' : ['1', 3, 1],
         'ß' : ['1', 3, 1]
     };
+
+    Machines[1][4] = {
+        '1' : ['1', 1, 1],
+        "ERROR" : "La máquina dice: no existe símbolo unario después del símbolo operador."
+    };
+
     Machines[1]['i'] = 0;
     Machines[1]['Count'] = 0;
     Machines[1]['State'] = 0;
@@ -146,8 +152,8 @@ function SetMachine1(){
 
 function SetMachine2(){
     Machines[2][0] = {
-        '1' : ['X', 1, 1],
-        '-' : ['-', 3, 1]
+        '1' : ['1', 14, 1],
+        "ERROR" : "La máquina dice: no existe símbolo unario antes del símbolo operador."
     }
 
     Machines[2][1] = {
@@ -161,12 +167,13 @@ function SetMachine2(){
         '1' : ['1', 2, -1],
         '-' : ['-', 2, -1],
         '=' : ['=', 2, -1],
-        'X' : ['1', 0, 1]
+        'X' : ['1', 15, 1]
     }
 
     Machines[2][3] = {
         '1' : ['X', 4, 1],
-        '=' : ['=', 11, 1]
+        '=' : ['=', 11, 1],
+        "ERROR" : "La máquina dice: no se esperaba un segundo operador."
     }
 
     Machines[2][4] = {
@@ -209,10 +216,9 @@ function SetMachine2(){
     }
 
     Machines[2][11] = {
-        '1' : ['1', 11, 1],
-        '-' : ['-', 11, 1],
-        '=' : ['=', 11, 1],
-        'ß' : ['1', 11, 1]
+        '1' : ['1', 13, 1],
+        '-' : ['-', 13, 1],
+        "ERROR" : "La máquina dice: la resta no está definida entre dos números iguales."
     }
 
     Machines[2][12] = {
@@ -222,11 +228,23 @@ function SetMachine2(){
         'X' : ['1', 3, 1]
     }
 
+    Machines[2][14] = {
+        '1' : ['1', 15, -1],
+        '-' : ['-', 15, -1],
+        'ß' : ['ß', 15, -1],
+        '=' : ['=', 15, -1]
+    }
+
+    Machines[2][15] = {
+        '1' : ['X', 1, 1],
+        '-' : ['-', 3, 1]
+    }
+
     Machines[2]['i'] = 0;
     Machines[2]['Count'] = 0;
     Machines[2]['State'] = 0;
     Machines[2]['Functions'] = {
-        Acceptable(state) { return state == 11 }
+        Acceptable(state) { return state == 13 }
     };
 }
 
@@ -403,7 +421,7 @@ function SetMachine5(){
 
     Machines[5][0] = {
         '1' : ['X', 1, 1],
-        '*' : ['*', 6, 1]
+        "ERROR" : "La máquina dice: se esperaba un símbolo unario como inicio de cadena."
     }
 
     Machines[5][1] = {
@@ -412,32 +430,45 @@ function SetMachine5(){
     }
 
     Machines[5][2] = {
-        '1' : ['X', 3, 1],
-        '=' : ['=', 5, -1]
+        '1' : ['1', 3, -1],
+        "ERROR" : "La máquina dice: no existe símbolo unario después del símbolo operador."        
     }
-
     Machines[5][3] = {
-        '1' : ['1', 3, 1],
-        '=' : ['=', 3, 1],
-        'ß' : ['1', 4, -1]
+        '*' : ['*', 4, 1]
     }
 
     Machines[5][4] = {
-        '1' : ['1', 4, -1],
-        '=' : ['=', 4, -1],
-        'X' : ['1', 2, 1]
+        '1' : ['X', 5, 1],
+        '=' : ['=', 7, -1]
     }
 
     Machines[5][5] = {
-        '1' : ['1', 5, -1],
-        '*' : ['*', 5, -1],
-        'X' : ['1', 0, 1]
+        '1' : ['1', 5, 1],
+        '=' : ['=', 5, 1],
+        'ß' : ['1', 6, -1]
+    }
+
+    Machines[5][6] = {
+        '1' : ['1', 6, -1],
+        '=' : ['=', 6, -1],
+        'X' : ['1', 4, 1]
+    }
+
+    Machines[5][7] = {
+        '1' : ['1', 7, -1],
+        '*' : ['*', 7, -1],
+        'X' : ['1', 8, 1]
+    }
+
+    Machines[5][8] = {
+        '1' : ['X', 1, 1],
+        '*' : ['*', 9, -1]
     }
 
     Machines[5]['i'] = 0;
     Machines[5]['Count'] = 0;
     Machines[5]['State'] = 0;
     Machines[5]['Functions'] = {
-        Acceptable(state) { return state == 6 }
+        Acceptable(state) { return state == 9 }
     };
 }
