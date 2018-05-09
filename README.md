@@ -10,7 +10,7 @@ Este simulador es una implementación en JavaScript de 5 máquinas de Turing que
 
 # Uso
 
-Inicie el simulador abriendo con su navegador web el archivo `index.html`. Es necesario que su navegador web soporte JavaScript y permita ejecutarlo. Una vez iniciado el simulador, verá la siguiente pantalla:
+Inicie el simulador abriendo con su navegador web el archivo `Turing.html`. Es necesario que su navegador web soporte JavaScript y permita ejecutarlo. Una vez iniciado el simulador, verá la siguiente pantalla:
 
 ![Pantalla principal del simulador](https://image.ibb.co/fgVZjS/Captura.png)
 
