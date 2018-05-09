@@ -24,27 +24,27 @@ $(function() {
     $('#elemento1').click(function(){
         ID = 1;
         ClearRows(1);
-        $('#etiqueta').innerHTML = "Sumador";
+        document.getElementById("etiqueta").innerText = "Sumador";
     });
     $('#elemento2').click(function(){
         ID = 2;
         ClearRows(2);
-        $("#etiqueta").innerHTML = "Restador";
+        document.getElementById("etiqueta").innerText = "Restador";
     });
     $('#elemento3').click(function(){
         ID = 3;        
         ClearRows(3);
-        $("#etiqueta").innerText = "Duplicador";
+        document.getElementById("etiqueta").innerText = "Duplicador";
     });
     $('#elemento4').click(function(){
         ID = 4;
         ClearRows(4);
-        $("#etiqueta").innerText = "Palíndromo";
+        document.getElementById("etiqueta").innerText = "Palíndromo";
     });
     $('#elemento5').click(function(){
         ID = 5;
         ClearRows(5);
-        $("#etiqueta").innerText = "Multiplicador";
+        document.getElementById("etiqueta").innerText = "Multiplicador";
     });
     $('#info').click(function(){
         $('#instrucciones' + ID).modal('show');
